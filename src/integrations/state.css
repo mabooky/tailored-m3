@@ -1,0 +1,7 @@
+@theme inline {
+    
+}
+
+@custom-variant disabled (&:disabled, &[aria-disabled="true"]);
+
+@custom-variant selected (&[data-selected="true"], &[aria-selected="true"]);
