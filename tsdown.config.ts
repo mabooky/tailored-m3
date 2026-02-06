@@ -7,9 +7,11 @@ export default defineConfig({
   clean: true,
   treeshake: true,
   banner: (ctx) => {
+    // 1. 현재 빌드 중인 파일이 'dist/components/Button.js'라면?
+    // 2. 원본 파일인 'src/components/Button.tsx'를 찾습니다.
     const sourcePath = ctx.fileName
-      .replace("dist/", "src/")      // dist를 src로 바꾸고
-      .replace(".js", ".tsx");       // .js를 .tsx로 바꿈
+      .replace("dist/", "src/") // dist를 src로 바꾸고
+      .replace(".js", ".tsx"); // .js를 .tsx로 바꿈
 
     // 3. 원본 파일이 실제로 존재하면 내용을 읽어봅니다.
     if (fs.existsSync(sourcePath)) {

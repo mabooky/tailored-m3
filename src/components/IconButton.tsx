@@ -1,7 +1,7 @@
 import { ComponentProps } from "react";
 import { StatefulContainer } from "./StatefulContainer";
-import { cn } from "@/utils/cn";
-import { SystemColor } from "@/types";
+import { cn } from "../utils/cn";
+import { SystemColor } from "../types";
 
 interface IconButtonProps extends ComponentProps<"button"> {
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';

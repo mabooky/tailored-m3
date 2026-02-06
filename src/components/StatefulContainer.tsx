@@ -1,6 +1,6 @@
 import { ComponentProps } from "react";
-import { cn } from "@/utils/cn";
-import { BG_SYSTEM_COLOR_MAP, SystemColor } from "@/types";
+import { cn } from "../utils/cn";
+import { BG_SYSTEM_COLOR_MAP, SystemColor } from "../types";
 
 export interface StatefulContainerProps extends ComponentProps<"button"> {
     stateLayerColor?: SystemColor;

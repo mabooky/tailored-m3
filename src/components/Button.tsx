@@ -1,9 +1,9 @@
 'use client';
 
 import { ComponentProps } from "react";
-import { cn } from "@/utils/cn";
+import { cn } from "../utils/cn";
 import { StatefulContainer } from "./StatefulContainer";
-import { SystemColor } from "@/types";
+import { SystemColor } from "../types";
 
 interface ButtonProps extends ComponentProps<"button"> {
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
