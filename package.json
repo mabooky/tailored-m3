@@ -3,12 +3,12 @@
   "type": "module",
   "version": "0.0.1",
   "description": "Material Design 3 System Tailored for Next.js & Tailwind CSS",
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
+      "import": "./dist/index.mjs",
       "types": "./dist/index.d.ts"
     },
     "./tailored-m3.css": "./src/tailored-m3.css"
