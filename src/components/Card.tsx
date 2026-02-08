@@ -1,4 +1,4 @@
-import { cn } from "../utils/cn";
+import { cn } from "@m3/utils/cn";
 import { StatefulContainer, StatefulContainerProps } from "./StatefulContainer";
 
 interface CardProps extends StatefulContainerProps {
