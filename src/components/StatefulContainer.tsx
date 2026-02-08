@@ -12,8 +12,8 @@ export function StatefulContainer({
     ref,
     className,
     stateLayerColor,
-    selected,
-    disabled,
+    selected = false,
+    disabled = false,
     children,
     ...props
 }: StatefulContainerProps) {

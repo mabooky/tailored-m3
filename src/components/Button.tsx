@@ -2,14 +2,13 @@
 
 import { ComponentProps } from "react";
 import { cn } from "@m3/utils/cn";
-import { StatefulContainer } from "./StatefulContainer";
+import { StatefulContainer, StatefulContainerProps } from "./StatefulContainer";
 import { SystemColor } from "@m3/types";
 
-interface ButtonProps extends ComponentProps<"button"> {
+interface ButtonProps extends StatefulContainerProps {
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     shape?: 'round' | 'square';
     variant?: 'elevated' | 'filled' | 'tonal' | 'outlined' | 'text';
-    selected?: boolean;
 }
 
 export function Button({

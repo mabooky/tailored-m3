@@ -3,7 +3,7 @@ import { StatefulContainer } from "./StatefulContainer";
 import { cn } from "@m3/utils/cn";
 import { SystemColor } from "@m3/types";
 
-interface IconButtonProps extends ComponentProps<"button"> {
+export interface IconButtonProps extends ComponentProps<"button"> {
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     shape?: 'round' | 'square';
     width?: 'default' | 'narrow' | 'wide';
