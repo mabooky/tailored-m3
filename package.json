@@ -1,7 +1,7 @@
 {
   "name": "@mabooky/tailored-m3",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Material Design 3 System Tailored for Next.js & Tailwind CSS",
   "publishConfig": {
     "access": "public"
@@ -11,8 +11,8 @@
   "types": "./dist/index.d.mts",
   "exports": {
     ".": {
-        "import": "./dist/index.mjs",
-        "types": "./dist/index.d.mts"
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.mts"
     },
     "./tailored-m3.css": "./dist/tailored-m3.css"
   },
