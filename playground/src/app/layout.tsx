@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
+import { MaterialThemeProvider } from '@m3/components/MaterialThemeProvider'
 
 const roboto = Roboto({
     subsets: ["latin"],
@@ -18,12 +19,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-        lang="en"
-        className={roboto.variable}>
+    <html lang="en" className={roboto.variable} suppressHydrationWarning>
         <body>
-        {children}
-      </body>
+            <MaterialThemeProvider>
+                {children}
+            </MaterialThemeProvider>
+        </body>
     </html>
   );
 }
