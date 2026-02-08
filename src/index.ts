@@ -1,9 +1,11 @@
+export * from "./components/AppBar"
 export * from "./components/Button"
 export * from "./components/ButtonGroup"
 export * from "./components/Card"
 export * from "./components/Container"
 export * from "./components/FAB"
 export * from "./components/IconButton"
+export * from "./components/MaterialThemeProvider"
 export * from "./components/StatefulContainer"
 export * from "./components/Tooltip"
 

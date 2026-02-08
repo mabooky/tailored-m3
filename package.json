@@ -1,8 +1,11 @@
 {
-  "name": "tailored-m3",
+  "name": "@mabooky/tailored-m3",
   "type": "module",
   "version": "0.0.1",
   "description": "Material Design 3 System Tailored for Next.js & Tailwind CSS",
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "./dist/index.mjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.mts",
@@ -13,6 +16,10 @@
     },
     "./tailored-m3.css": "./dist/tailored-m3.css"
   },
+  "files": [
+    "dist",
+    "package.json"
+  ],
   "peerDependencies": {
     "next": ">=16",
     "react": ">=19",
@@ -34,5 +41,8 @@
     "tailwindcss": "^4.1.18",
     "tsdown": "^0.20.3",
     "typescript": "^5.9.3"
+  },
+  "scripts": {
+    "build": "tsdown"
   }
 }

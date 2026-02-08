@@ -2,9 +2,13 @@ import { defineConfig } from 'tsdown';
 import fs from "fs";
 
 export default defineConfig({
-    entry: ['./src/index.ts', './src/components/**/*.tsx'],
+    entry: ['./src/index.ts', './src/components/**/*.tsx', './src/tailored-m3.css'],
+    format: 'esm',
+    outDir: 'dist',
     dts: true,
+    clean: true,
     treeshake: true,
+    minify: true,
     banner: (ctx) => {
         const sourcePath = ctx.fileName
             .replace('dist/', 'src/')
