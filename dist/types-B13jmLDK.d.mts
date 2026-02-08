@@ -1,6 +1,0 @@
-
-//#region src/types.d.ts
-type SystemColor = 'primary' | 'on-primary' | 'primary-container' | 'on-primary-container' | 'secondary' | 'on-secondary' | 'secondary-container' | 'on-secondary-container' | 'tertiary' | 'on-tertiary' | 'tertiary-container' | 'on-tertiary-container' | 'error' | 'on-error' | 'error-container' | 'on-error-container' | 'primary-fixed' | 'primary-fixed-dim' | 'on-primary-fixed' | 'on-primary-fixed-variant' | 'secondary-fixed' | 'secondary-fixed-dim' | 'on-secondary-fixed' | 'on-secondary-fixed-variant' | 'tertiary-fixed' | 'tertiary-fixed-dim' | 'on-tertiary-fixed' | 'on-tertiary-fixed-variant' | 'surface-dim' | 'surface' | 'surface-bright' | 'surface-container-lowest' | 'surface-container-low' | 'surface-container' | 'surface-container-high' | 'surface-container-highest' | 'on-surface' | 'on-surface-variant' | 'outline' | 'outline-variant' | 'inverse-surface' | 'inverse-on-surface' | 'inverse-primary' | 'scrim' | 'shadow';
-declare const BG_SYSTEM_COLOR_MAP: Record<SystemColor, string>;
-//#endregion
-export { SystemColor as n, BG_SYSTEM_COLOR_MAP as t };
