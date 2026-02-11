@@ -2,7 +2,7 @@
 
 import { ComponentProps } from "react";
 import { cn } from "@m3/utils/cn";
-import { StatefulContainer, StatefulContainerProps } from "./StatefulContainer";
+import { StatefulContainer, StatefulContainerProps } from "../core/StatefulContainer";
 import { SystemColor } from "@m3/types";
 
 interface ButtonProps extends StatefulContainerProps {

@@ -1,18 +1,15 @@
-'use client';
-
-import { AppBar } from "@m3/components/AppBar";
-import { Button, Card, IconButton } from "@m3/index";
+import { AppBar, Button, Card, IconButton } from "@mabooky/tailored-m3";
 
 export default function Home() {
+    // Tailwind에서 custom breakpoint를 만든 것과 별개로 <meta> viewport 설정을 해줘야 한다는데...?
+
     return (
         <div
-            className="flex flex-col w-full gap-16 items-start">
+            className="w-full h-full flex flex-col items-center bg-black">
             <AppBar>
                 <AppBar.LeadingButton>arrow_back</AppBar.LeadingButton>
             </AppBar>
-            <Button onClick={() => alert('1억이 결제되었습니다.')}>Make payment</Button>
-            <Card>Play relaxing songs</Card>
-            <IconButton>play_arrow</IconButton>
+            <IconButton size="xs" width="narrow">play_arrow</IconButton>
         </div>
     )
 }

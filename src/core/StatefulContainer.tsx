@@ -4,6 +4,7 @@ import { BG_SYSTEM_COLOR_MAP, SystemColor } from "@m3/types";
 
 export interface StatefulContainerProps extends ComponentProps<"button"> {
     stateLayerColor?: SystemColor;
+    minimumTouchTarget?: boolean;
     selected?: boolean;
     disabled?: boolean;
 }
@@ -12,30 +13,35 @@ export function StatefulContainer({
     ref,
     className,
     stateLayerColor,
+    minimumTouchTarget,
     selected = false,
     disabled = false,
     children,
-    ...props
+    ...props 
 }: StatefulContainerProps) {
     return (
         <button
             ref={ref}
-            data-selected={selected}
-            disabled={disabled}
             className={cn(
-                `relative overflow-clip disabled:opacity-38`, // TODO: opacity가 border에도 영향을 미치는 것 같음
+                `relative disabled:opacity-38 group`,
+                minimumTouchTarget && 'm3-minimum-touch-target',
                 className
             )}
+            data-selected={selected}
+            disabled={disabled}
             {...props}>
-            <div
-                className={`
-                    absolute inset-0 size-full ${stateLayerColor ? BG_SYSTEM_COLOR_MAP[stateLayerColor] : ''}
-                    opacity-0
-                    hover:opacity-8
-                    active:opacity-10
-                `}
-            />
             {children}
+
+            {/* State Layer */}
+            <div
+                className={cn(
+                    `
+                    absolute inset-0 size-full rounded-[inherit] opacity-0 pointer-events-none
+                    group-hover:opacity-8 group-active:opacity-10
+                    `,
+                    stateLayerColor ? BG_SYSTEM_COLOR_MAP[stateLayerColor] : null
+                )}
+            />
         </button>
     )
 }

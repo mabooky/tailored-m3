@@ -1,12 +1,13 @@
 import { cn } from "@m3/utils/cn";
-import { StatefulContainer, StatefulContainerProps } from "./StatefulContainer";
+import { StatefulContainer, StatefulContainerProps } from "../core/StatefulContainer";
+import { ComponentProps } from "react";
 
 interface CardProps extends StatefulContainerProps {
     variant?: "elevated" | "filled" | "outlined";
     disabled?: boolean;
 }
 
-export function Card({
+export function CardRoot({
     className,
     variant = "elevated",
     disabled = false,
@@ -42,3 +43,27 @@ export function Card({
         </StatefulContainer> 
     )
 }
+
+export interface CardHeadlineProps extends ComponentProps<"p"> {
+
+}
+
+export function CardHeadline({
+    ref,
+    className,
+    children,
+    ...props
+}: CardHeadlineProps) {
+    return (
+        <p
+            ref={ref}
+            className="typescale-display-small mx-[16px]"
+            {...props}>
+            {children}
+        </p>
+    )
+}
+
+export const Card = Object.assign(CardRoot, {
+    Headline: CardHeadline,
+})

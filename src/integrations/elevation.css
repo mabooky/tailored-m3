@@ -1,12 +1,12 @@
 @theme {
-    --md3-elevation-shadow-1-color: color-mix(in oklab, var(--md-sys-color-shadow) 20%, transparent);
-    --md3-elevation-shadow-2-color: color-mix(in oklab, var(--md-sys-color-shadow) 14%, transparent);
-    --md3-elevation-shadow-3-color: color-mix(in oklab, var(--md-sys-color-shadow) 12%, transparent);
+    --m3-elevation-shadow-2-color: color-mix(in oklab, var(--md-sys-color-shadow) 14%, transparent);
+    --m3-elevation-shadow-1-color: color-mix(in oklab, var(--md-sys-color-shadow) 20%, transparent);
+    --m3-elevation-shadow-3-color: color-mix(in oklab, var(--md-sys-color-shadow) 12%, transparent);
 
-    --shadow-elevation-0: 0px 0px 0px 0px var(--md3-elevation-shadow-1-color), 0px 0px 0px 0px var(--md3-elevation-shadow-2-color), 0px 0px 0px 0px var(--md3-elevation-shadow-3-color);
-    --shadow-elevation-1: 0px 2px 1px -1px var(--md3-elevation-shadow-1-color), 0px 1px 1px 0px var(--md3-elevation-shadow-2-color), 0px 1px 3px 0px var(--md3-elevation-shadow-3-color);
-    --shadow-elevation-2: 0px 3px 3px -2px var(--md3-elevation-shadow-1-color), 0px 3px 4px 0px var(--md3-elevation-shadow-2-color), 0px 1px 8px 0px var(--md3-elevation-shadow-3-color);
-    --shadow-elevation-3: 0px 3px 5px -1px var(--md3-elevation-shadow-1-color), 0px 6px 10px 0px var(--md3-elevation-shadow-2-color), 0px 1px 18px 0px var(--md3-elevation-shadow-3-color);
-    --shadow-elevation-4: 0px 5px 5px -3px var(--md3-elevation-shadow-1-color), 0px 8px 10px 1px var(--md3-elevation-shadow-2-color), 0px 3px 14px 2px var(--md3-elevation-shadow-3-color);
-    --shadow-elevation-5: 0px 7px 8px -4px var(--md3-elevation-shadow-1-color), 0px 12px 17px 2px var(--md3-elevation-shadow-2-color), 0px 5px 22px 4px var(--md3-elevation-shadow-3-color);
+    --shadow-elevation-0: 0px 0px 0px 0px var(--m3-elevation-shadow-1-color), 0px 0px 0px 0px var(--m3-elevation-shadow-2-color), 0px 0px 0px 0px var(--m3-elevation-shadow-3-color);
+    --shadow-elevation-1: 0px 2px 1px -1px var(--m3-elevation-shadow-1-color), 0px 1px 1px 0px var(--m3-elevation-shadow-2-color), 0px 1px 3px 0px var(--m3-elevation-shadow-3-color);
+    --shadow-elevation-2: 0px 3px 3px -2px var(--m3-elevation-shadow-1-color), 0px 3px 4px 0px var(--m3-elevation-shadow-2-color), 0px 1px 8px 0px var(--m3-elevation-shadow-3-color);
+    --shadow-elevation-3: 0px 3px 5px -1px var(--m3-elevation-shadow-1-color), 0px 6px 10px 0px var(--m3-elevation-shadow-2-color), 0px 1px 18px 0px var(--m3-elevation-shadow-3-color);
+    --shadow-elevation-4: 0px 5px 5px -3px var(--m3-elevation-shadow-1-color), 0px 8px 10px 1px var(--m3-elevation-shadow-2-color), 0px 3px 14px 2px var(--m3-elevation-shadow-3-color);
+    --shadow-elevation-5: 0px 7px 8px -4px var(--m3-elevation-shadow-1-color), 0px 12px 17px 2px var(--m3-elevation-shadow-2-color), 0px 5px 22px 4px var(--m3-elevation-shadow-3-color);
 }

@@ -1,6 +1,6 @@
 import { ComponentProps } from "react";
 import { cn } from "@m3/utils/cn";
-import { Container } from "./Container";
+import { Container } from "../core/Container";
 
 interface TooltipProps extends ComponentProps<"div"> {
     variant?: 'plain' | 'rich';

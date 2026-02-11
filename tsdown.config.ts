@@ -1,8 +1,8 @@
 import { defineConfig } from 'tsdown';
-import fs from "fs";
+import fs from 'fs';
 
 export default defineConfig({
-    entry: ['./src/index.ts', './src/components/**/*.tsx', './src/tailored-m3.css'],
+    entry: ['./src/index.ts', './src/components/**/*.tsx'],
     format: 'esm',
     outDir: 'dist',
     dts: true,

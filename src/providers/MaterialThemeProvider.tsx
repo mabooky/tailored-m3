@@ -5,7 +5,7 @@ import { ThemeProvider } from 'next-themes';
 export function MaterialThemeProvider({
     children
 }: Readonly<{
-    children: React.ReactNode;
+    children?: React.ReactNode;
 }>) {
     return (
         <ThemeProvider

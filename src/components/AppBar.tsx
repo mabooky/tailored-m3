@@ -1,5 +1,5 @@
 import { cn } from "@m3/utils/cn";
-import { Container, ContainerProps } from "./Container";
+import { Container, ContainerProps } from "../core/Container";
 import { IconButton, IconButtonProps } from "./IconButton";
 import { ComponentProps } from "react";
 

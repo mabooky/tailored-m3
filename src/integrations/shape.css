@@ -8,6 +8,7 @@
 }
 
 @theme inline {
+    --radius-*: initial;
     --radius-xs: var(--md-sys-shape-corner-value-extra-small);
     --radius-sm: var(--md-sys-shape-corner-value-small);
     --radius-md: var(--md-sys-shape-corner-value-medium);
@@ -16,8 +17,4 @@
     --radius-xl: var(--md-sys-shape-corner-value-extra-large);
     --radius-xli: var(--md-sys-shape-corner-value-extra-large-increased);
     --radius-2xl: var(--md-sys-shape-corner-value-extra-extra-large);
-    
-    /* MD3에 없는 3XL, 4XL은 미사용 */
-    --radius-3xl: 0px;
-    --radius-4xl: 0px;
 }

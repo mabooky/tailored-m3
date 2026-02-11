@@ -20,7 +20,8 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "@m3/*": ["../src/*"]
+      "@m3/*": ["../src/*"],
+      "@mabooky/tailored-m3": ["../src/index.ts"]
     }
   },
   "include": [
