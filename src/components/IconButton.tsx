@@ -1,10 +1,8 @@
-import { ComponentProps } from "react";
-import { StatefulContainer } from "@m3/core/StatefulContainer";
+import { StatefulContainer, StatefulContainerProps } from "@m3/core/StatefulContainer";
 import { cn } from "@m3/utils/cn";
 import { SystemColor } from "@m3/types";
-import { TouchSpacer } from "@m3/core/TouchSpacer";
 
-export interface IconButtonProps extends ComponentProps<"button"> {
+export interface IconButtonProps extends StatefulContainerProps {
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     shape?: 'round' | 'square';
     width?: 'default' | 'narrow' | 'wide';
@@ -95,7 +93,7 @@ export function IconButton({
             ref={ref}
             className={cn(
                 `
-                flex justify-center items-center cursor-pointer transition-all duration-100 ease-out
+                flex justify-center items-center cursor-pointer transition-all duration-100
                 `,
                 sizeStyles[size],
                 shape === 'round' ? 'rounded-full-var' : '',
@@ -104,7 +102,7 @@ export function IconButton({
                 className
             )}
             stateLayerColor={variantStateLayerColors[variant]}
-            minimumTouchTarget
+            minimumTouchTarget={size === 'xs' || size === 'sm'}
             selected={selected}
             disabled={disabled}
             {...props}>

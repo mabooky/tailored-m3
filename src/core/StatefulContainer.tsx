@@ -13,7 +13,12 @@ export function StatefulContainer({
     ref,
     className,
     stateLayerColor,
-    minimumTouchTarget,
+    minimumTouchTarget = false,
+    /* 
+        minimumTouchTarget은 접근성 관련 설정이기 때문에 기본값 true가 옳으나,
+        항상 true로 둘 경우 after 의사 요소가 불필요한 곳에도 렌더링된다.
+        따라서, 각 컴포넌트에서 이 기능이 필요한지 판단하고 항상 true인 것과 같은 효과를 낼 것!
+    */
     selected = false,
     disabled = false,
     children,

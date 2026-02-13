@@ -5,7 +5,7 @@ export default function Home() {
 
     return (
         <div
-            className="w-full h-full flex flex-col items-center bg-black">
+            className="w-full h-full flex flex-col items-center">
             <AppBar>
                 <AppBar.LeadingButton>arrow_back</AppBar.LeadingButton>
             </AppBar>
