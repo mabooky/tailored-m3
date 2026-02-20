@@ -4,6 +4,7 @@
 @import "./integrations/color.css";
 @import "./integrations/elevation.css";
 @import "./integrations/layout.css";
+@import "./integrations/motion.css";
 @import "./integrations/shape.css";
 @import "./integrations/state.css";
 @import "./integrations/typography.css";

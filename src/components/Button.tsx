@@ -32,7 +32,7 @@ export function Button({
     /*
         shapeVariantStyles가 없는 이유:
         sizeVariantStyles를 shape가 square라고 가정하여 작성하고, 
-        class merging 단계에서 round인 경우 rounded-full-var 속성을 덮어쓰는 방식 사용.
+        class merging 단계에서 round인 경우 rounded-var-full 속성을 덮어쓰는 방식 사용.
     */
     const variantStyles = {
         elevated: `
@@ -68,7 +68,7 @@ export function Button({
             className={cn(
                 `cursor-pointer transition-all duration-100 ease-out`,
                 sizeStyles[size],
-                shape === 'round' ? 'rounded-full-var' : '',
+                shape === 'round' ? 'rounded-var-full' : '',
                 variantStyles[variant],
                 className
             )}

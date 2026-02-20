@@ -1,27 +1,50 @@
+'use client';
+
 import { cn } from "@m3/utils/cn";
 import { Container, ContainerProps } from "../core/Container";
 import { IconButton, IconButtonProps } from "./IconButton";
-import { ComponentProps } from "react";
+import { ComponentProps, createContext, useContext } from "react";
 
 export interface AppBarProps extends ContainerProps {
     variant?: 'search' | 'small' | 'medium-flexible' | 'large-flexible'
 }
 
-function AppBarRoot({
+interface AppBarContextValue {
+    variant: NonNullable<AppBarProps['variant']>;
+}
+
+const AppBarContext = createContext<AppBarContextValue>({ variant: 'small' });
+
+function useAppBarContext() {
+    return useContext(AppBarContext);
+}
+
+export function AppBarRoot({
     ref,
     className,
-    variant,
+    variant = 'small',
     children,
     ...props
 }: AppBarProps) {
+    const variantStyles = {
+        'search': `h-16 items-center`,
+        'small': `h-16 items-center`,
+        'medium-flexible': `h-28 items-start`,
+        'large-flexible': `h-30 items-start`,
+    }
+
     return (
         <Container
             ref={ref}
             className={cn(
-                `flex w-full h-[64px] bg-surface items-center`
+                `w-full bg-surface flex px-1`,
+                variantStyles[variant],
+                className
             )}
             {...props}>
-            {children}
+            <AppBarContext.Provider value={{ variant }}>
+                {children}
+            </AppBarContext.Provider>
         </Container>
     )
 }
@@ -30,19 +53,46 @@ export interface AppBarLeadingButtonProps extends IconButtonProps {
 
 }
 
-function AppBarLeadingButton({
+export function AppBarLeadingButton({
     ref,
     className,
     children,
     ...props
 }: AppBarLeadingButtonProps) {
+    const variant = useAppBarContext().variant;
+
     return (
         <IconButton
             ref={ref}
             variant="standard"
             size="sm"
             className={cn(
-                `mx-[4px]`,
+                ``,
+                className
+            )}
+            {...props}>
+            {children}
+        </IconButton>
+    )
+}
+
+export interface AppBarTrailingButtonProps extends IconButtonProps {
+
+}
+
+export function AppBarTrailingButton({
+    ref,
+    className,
+    children,
+    ...props
+}: AppBarTrailingButtonProps) {
+    return (
+        <IconButton
+            ref={ref}
+            variant="standard"
+            size="sm"
+            className={cn(
+                ``,
                 className
             )}
             {...props}>
@@ -55,6 +105,30 @@ export interface AppBarHeadlineProps extends ComponentProps<"p"> {
     
 }
 
-export const AppBar = Object.assign(AppBarRoot, {
-    LeadingButton: AppBarLeadingButton,
-})
+export function AppBarHeadline({
+    ref,
+    className,
+    children,
+    ...props
+}: AppBarHeadlineProps) {
+    const variant = useAppBarContext().variant;
+
+    const variantStyles = {
+        'search': ``,
+        'small': `flex-1 mx-1 typescale-title-large`,
+        'medium-flexible': `absolute bottom-3 left-4 typescale-headline-medium`,
+        'large-flexible': `absolute bottom-3 left-4 typescale-display-small`,
+    }
+
+    return (
+        <p
+            ref={ref}
+            className={cn(
+                variantStyles[variant],
+                className,
+            )}
+            {...props}>
+            {children}
+        </p>
+    )
+}

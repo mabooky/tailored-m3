@@ -3,6 +3,7 @@
     - md.sys.state
     - md.sys.color
     - md.sys.shape
+    - md.sys.motion
     - md.sys.typography
 
     ※ elevation은 반드시 그림자로만 표현되지 않는다. 또한, 톤 차이를 통해 표현되더라도 일반화하기에는 어려움이 있으며,
@@ -362,15 +363,46 @@
 
 /* #region md.sys.shape */
 :root {
-    --md-sys-shape-corner-value-none: 0px;
-    --md-sys-shape-corner-value-extra-small: 4px;
-    --md-sys-shape-corner-value-small: 8px;
-    --md-sys-shape-corner-value-medium: 12px;
-    --md-sys-shape-corner-value-large: 16px;
-    --md-sys-shape-corner-value-large-increased: 20px;
-    --md-sys-shape-corner-value-extra-large: 28px;
-    --md-sys-shape-corner-value-extra-large-increased: 32px;
-    --md-sys-shape-corner-value-extra-extra-large: 48px;
+    --md-sys-shape-corner-value-none: 0rem;
+    --md-sys-shape-corner-value-extra-small: 0.25rem;
+    --md-sys-shape-corner-value-small: 0.5rem;
+    --md-sys-shape-corner-value-medium: 0.75rem;
+    --md-sys-shape-corner-value-large: 1rem;
+    --md-sys-shape-corner-value-large-increased: 1.25rem;
+    --md-sys-shape-corner-value-extra-large: 1.75rem;
+    --md-sys-shape-corner-value-extra-large-increased: 2rem;
+    --md-sys-shape-corner-value-extra-extra-large: 3rem;
+}
+/* #endregion */
+
+/* #region md.sys.motion */
+/* ⬇️ MotionSchemeProvider가 없을 경우를 대비해 data-motion-scheme 속성이 없는 경우에도 정의 */
+:root {
+    --md-sys-motion-spring-fast-spatial-duration: 350ms;
+    --md-sys-motion-spring-fast-spatial-easing: cubic-bezier(0.42, 1.67, 0.21, 0.90);
+    --md-sys-motion-spring-default-spatial: 500ms cubic-bezier(0.38, 1.21, 0.22, 1.00);
+    --md-sys-motion-spring-slow-spatial: 650ms cubic-bezier(0.39, 1.29, 0.35, 0.98);
+    --md-sys-motion-spring-fast-effects: 150ms cubic-bezier(0.31, 0.94, 0.34, 1.00);
+    --md-sys-motion-spring-default-effects: 200ms cubic-bezier(0.34, 0.80, 0.34, 1.00);
+    --md-sys-motion-spring-slow-effects: 300ms cubic-bezier(0.34, 0.88, 0.34, 1.00);
+}
+
+:root[data-motion-scheme="expressive"] {
+    --md-sys-motion-spring-fast-spatial: 350ms cubic-bezier(0.42, 1.67, 0.21, 0.90);
+    --md-sys-motion-spring-default-spatial: 500ms cubic-bezier(0.38, 1.21, 0.22, 1.00);
+    --md-sys-motion-spring-slow-spatial: 650ms cubic-bezier(0.39, 1.29, 0.35, 0.98);
+    --md-sys-motion-spring-fast-effects: 150ms cubic-bezier(0.31, 0.94, 0.34, 1.00);
+    --md-sys-motion-spring-default-effects: 200ms cubic-bezier(0.34, 0.80, 0.34, 1.00);
+    --md-sys-motion-spring-slow-effects: 300ms cubic-bezier(0.34, 0.88, 0.34, 1.00);
+}
+
+:root[data-motion-scheme="standard"] {
+    --md-sys-motion-spring-fast-spatial: 350ms cubic-bezier(0.27, 1.06, 0.18, 1.00);
+    --md-sys-motion-spring-default-spatial: 500ms cubic-bezier(0.27, 1.06, 0.18, 1.00);
+    --md-sys-motion-spring-slow-spatial: 750ms cubic-bezier(0.27, 1.06, 0.18, 1.00);
+    --md-sys-motion-spring-fast-effects: 150ms cubic-bezier(0.31, 0.94, 0.34, 1.00);
+    --md-sys-motion-spring-default-effects: 200ms cubic-bezier(0.34, 0.80, 0.34, 1.00);
+    --md-sys-motion-spring-slow-effects: 300ms cubic-bezier(0.34, 0.88, 0.34, 1.00);
 }
 /* #endregion */
 
@@ -378,182 +410,182 @@
 :root {
     --md-sys-typescale-display-large-font: var(--font-roboto), sans-serif;
     --md-sys-typescale-display-large-weight: 400;
-    --md-sys-typescale-display-large-size: 57pt;
-    --md-sys-typescale-display-large-tracking: -0.25pt;
-    --md-sys-typescale-display-large-line-height: 64pt;
+    --md-sys-typescale-display-large-size: 3.5625rem;
+    --md-sys-typescale-display-large-tracking: -0.015625rem;
+    --md-sys-typescale-display-large-line-height: 4rem;
 
     --md-sys-typescale-display-medium-font: var(--font-roboto), sans-serif;
     --md-sys-typescale-display-medium-weight: 400;
-    --md-sys-typescale-display-medium-size: 45pt;
-    --md-sys-typescale-display-medium-tracking: 0pt;
-    --md-sys-typescale-display-medium-line-height: 52pt;
+    --md-sys-typescale-display-medium-size: 2.8125rem;
+    --md-sys-typescale-display-medium-tracking: 0rem;
+    --md-sys-typescale-display-medium-line-height: 3.25rem;
 
     --md-sys-typescale-display-small-font: var(--font-roboto), sans-serif;
     --md-sys-typescale-display-small-weight: 400;
-    --md-sys-typescale-display-small-size: 36pt;
-    --md-sys-typescale-display-small-tracking: 0pt;
-    --md-sys-typescale-display-small-line-height: 44pt;
+    --md-sys-typescale-display-small-size: 2.25rem;
+    --md-sys-typescale-display-small-tracking: 0rem;
+    --md-sys-typescale-display-small-line-height: 2.75rem;
 
     --md-sys-typescale-headline-large-font: var(--font-roboto), sans-serif;
     --md-sys-typescale-headline-large-weight: 400;
-    --md-sys-typescale-headline-large-size: 32pt;
-    --md-sys-typescale-headline-large-tracking: 0pt;
-    --md-sys-typescale-headline-large-line-height: 40pt;
+    --md-sys-typescale-headline-large-size: 2rem;
+    --md-sys-typescale-headline-large-tracking: 0rem;
+    --md-sys-typescale-headline-large-line-height: 2.5rem;
 
     --md-sys-typescale-headline-medium-font: var(--font-roboto), sans-serif;
     --md-sys-typescale-headline-medium-weight: 400;
-    --md-sys-typescale-headline-medium-size: 28pt;
-    --md-sys-typescale-headline-medium-tracking: 0pt;
-    --md-sys-typescale-headline-medium-line-height: 36pt;
+    --md-sys-typescale-headline-medium-size: 1.75rem;
+    --md-sys-typescale-headline-medium-tracking: 0rem;
+    --md-sys-typescale-headline-medium-line-height: 2.25rem;
     
     --md-sys-typescale-headline-small-font: var(--font-roboto), sans-serif;
     --md-sys-typescale-headline-small-weight: 400;
-    --md-sys-typescale-headline-small-size: 24pt;
-    --md-sys-typescale-headline-small-tracking: 0pt;
-    --md-sys-typescale-headline-small-line-height: 32pt;
+    --md-sys-typescale-headline-small-size: 1.5rem;
+    --md-sys-typescale-headline-small-tracking: 0rem;
+    --md-sys-typescale-headline-small-line-height: 2rem;
 
     --md-sys-typescale-title-large-font: var(--font-roboto), sans-serif;
     --md-sys-typescale-title-large-weight: 400;
-    --md-sys-typescale-title-large-size: 22pt;
-    --md-sys-typescale-title-large-tracking: 0pt;
-    --md-sys-typescale-title-large-line-height: 28pt;
+    --md-sys-typescale-title-large-size: 1.375rem;
+    --md-sys-typescale-title-large-tracking: 0rem;
+    --md-sys-typescale-title-large-line-height: 1.75rem;
 
     --md-sys-typescale-title-medium-font: var(--font-roboto), sans-serif;
     --md-sys-typescale-title-medium-weight: 500;
-    --md-sys-typescale-title-medium-size: 16pt;
-    --md-sys-typescale-title-medium-tracking: 0.15pt;
-    --md-sys-typescale-title-medium-line-height: 24pt;
+    --md-sys-typescale-title-medium-size: 1rem;
+    --md-sys-typescale-title-medium-tracking: 0.009375rem;
+    --md-sys-typescale-title-medium-line-height: 1.5rem;
 
     --md-sys-typescale-title-small-font: var(--font-roboto), sans-serif;
     --md-sys-typescale-title-small-weight: 500;
-    --md-sys-typescale-title-small-size: 14pt;
-    --md-sys-typescale-title-small-tracking: 0.1pt;
-    --md-sys-typescale-title-small-line-height: 20pt;
+    --md-sys-typescale-title-small-size: 0.875rem;
+    --md-sys-typescale-title-small-tracking: 0.00625rem;
+    --md-sys-typescale-title-small-line-height: 1.25rem;
 
     --md-sys-typescale-body-large-font: var(--font-roboto), sans-serif;
     --md-sys-typescale-body-large-weight: 400;
-    --md-sys-typescale-body-large-size: 16pt;
-    --md-sys-typescale-body-large-tracking: 0.5pt;
-    --md-sys-typescale-body-large-line-height: 24pt;
+    --md-sys-typescale-body-large-size: 1rem;
+    --md-sys-typescale-body-large-tracking: 0.03125rem;
+    --md-sys-typescale-body-large-line-height: 1.5rem;
 
     --md-sys-typescale-body-medium-font: var(--font-roboto), sans-serif;
     --md-sys-typescale-body-medium-weight: 400;
-    --md-sys-typescale-body-medium-size: 14pt;
-    --md-sys-typescale-body-medium-tracking: 0.25pt;
-    --md-sys-typescale-body-medium-line-height: 20pt;
+    --md-sys-typescale-body-medium-size: 0.875rem;
+    --md-sys-typescale-body-medium-tracking: 0.015625rem;
+    --md-sys-typescale-body-medium-line-height: 1.25rem;
 
     --md-sys-typescale-body-small-font: var(--font-roboto), sans-serif;
     --md-sys-typescale-body-small-weight: 400;
-    --md-sys-typescale-body-small-size: 12pt;
-    --md-sys-typescale-body-small-tracking: 0.4pt;
-    --md-sys-typescale-body-small-line-height: 16pt;
+    --md-sys-typescale-body-small-size: 0.75rem;
+    --md-sys-typescale-body-small-tracking: 0.025rem;
+    --md-sys-typescale-body-small-line-height: 1rem;
 
     --md-sys-typescale-label-large-font: var(--font-roboto), sans-serif;
     --md-sys-typescale-label-large-weight: 500;
-    --md-sys-typescale-label-large-size: 14pt;
-    --md-sys-typescale-label-large-tracking: 0.1pt;
-    --md-sys-typescale-label-large-line-height: 20pt;
+    --md-sys-typescale-label-large-size: 0.875rem;
+    --md-sys-typescale-label-large-tracking: 0.00625rem;
+    --md-sys-typescale-label-large-line-height: 1.25rem;
 
     --md-sys-typescale-label-medium-font: var(--font-roboto), sans-serif;
     --md-sys-typescale-label-medium-weight: 500;
-    --md-sys-typescale-label-medium-size: 12pt;
-    --md-sys-typescale-label-medium-tracking: 0.5pt;
-    --md-sys-typescale-label-medium-line-height: 16pt;
+    --md-sys-typescale-label-medium-size: 0.75rem;
+    --md-sys-typescale-label-medium-tracking: 0.03125rem;
+    --md-sys-typescale-label-medium-line-height: 1rem;
 
     --md-sys-typescale-label-small-font: var(--font-roboto), sans-serif;
     --md-sys-typescale-label-small-weight: 500;
-    --md-sys-typescale-label-small-size: 11pt;
-    --md-sys-typescale-label-small-tracking: 0.5pt;
-    --md-sys-typescale-label-small-line-height: 16pt;
+    --md-sys-typescale-label-small-size: 0.6875rem;
+    --md-sys-typescale-label-small-tracking: 0.03125rem;
+    --md-sys-typescale-label-small-line-height: 1rem;
 
     --md-sys-typescale-emphasized-display-large-font: var(--font-roboto), sans-serif;
     --md-sys-typescale-emphasized-display-large-weight: 500;
-    --md-sys-typescale-emphasized-display-large-size: 57pt;
-    --md-sys-typescale-emphasized-display-large-tracking: -0.25pt;
-    --md-sys-typescale-emphasized-display-large-line-height: 64pt;
+    --md-sys-typescale-emphasized-display-large-size: 3.5625rem;
+    --md-sys-typescale-emphasized-display-large-tracking: -0.015625rem;
+    --md-sys-typescale-emphasized-display-large-line-height: 4rem;
 
     --md-sys-typescale-emphasized-display-medium-font: var(--font-roboto), sans-serif;
     --md-sys-typescale-emphasized-display-medium-weight: 500;
-    --md-sys-typescale-emphasized-display-medium-size: 45pt;
-    --md-sys-typescale-emphasized-display-medium-tracking: 0pt;
-    --md-sys-typescale-emphasized-display-medium-line-height: 52pt;
+    --md-sys-typescale-emphasized-display-medium-size: 2.8125rem;
+    --md-sys-typescale-emphasized-display-medium-tracking: 0rem;
+    --md-sys-typescale-emphasized-display-medium-line-height: 3.25rem;
 
     --md-sys-typescale-emphasized-display-small-font: var(--font-roboto), sans-serif;
     --md-sys-typescale-emphasized-display-small-weight: 500;
-    --md-sys-typescale-emphasized-display-small-size: 36pt;
-    --md-sys-typescale-emphasized-display-small-tracking: 0pt;
-    --md-sys-typescale-emphasized-display-small-line-height: 44pt;
+    --md-sys-typescale-emphasized-display-small-size: 2.25rem;
+    --md-sys-typescale-emphasized-display-small-tracking: 0rem;
+    --md-sys-typescale-emphasized-display-small-line-height: 2.75rem;
 
     --md-sys-typescale-emphasized-headline-large-font: var(--font-roboto), sans-serif;
     --md-sys-typescale-emphasized-headline-large-weight: 500;
-    --md-sys-typescale-emphasized-headline-large-size: 32pt;
-    --md-sys-typescale-emphasized-headline-large-tracking: 0pt;
-    --md-sys-typescale-emphasized-headline-large-line-height: 40pt;
+    --md-sys-typescale-emphasized-headline-large-size: 2rem;
+    --md-sys-typescale-emphasized-headline-large-tracking: 0rem;
+    --md-sys-typescale-emphasized-headline-large-line-height: 2.5rem;
 
     --md-sys-typescale-emphasized-headline-medium-font: var(--font-roboto), sans-serif;
     --md-sys-typescale-emphasized-headline-medium-weight: 500;
-    --md-sys-typescale-emphasized-headline-medium-size: 28pt;
-    --md-sys-typescale-emphasized-headline-medium-tracking: 0pt;
-    --md-sys-typescale-emphasized-headline-medium-line-height: 36pt;
+    --md-sys-typescale-emphasized-headline-medium-size: 1.75rem;
+    --md-sys-typescale-emphasized-headline-medium-tracking: 0rem;
+    --md-sys-typescale-emphasized-headline-medium-line-height: 2.25rem;
 
     --md-sys-typescale-emphasized-headline-small-font: var(--font-roboto), sans-serif;
     --md-sys-typescale-emphasized-headline-small-weight: 500;
-    --md-sys-typescale-emphasized-headline-small-size: 24pt;
-    --md-sys-typescale-emphasized-headline-small-tracking: 0pt;
-    --md-sys-typescale-emphasized-headline-small-line-height: 32pt;
+    --md-sys-typescale-emphasized-headline-small-size: 1.5rem;
+    --md-sys-typescale-emphasized-headline-small-tracking: 0rem;
+    --md-sys-typescale-emphasized-headline-small-line-height: 2rem;
 
     --md-sys-typescale-emphasized-title-large-font: var(--font-roboto), sans-serif;
     --md-sys-typescale-emphasized-title-large-weight: 500;
-    --md-sys-typescale-emphasized-title-large-size: 22pt;
-    --md-sys-typescale-emphasized-title-large-tracking: 0pt;
-    --md-sys-typescale-emphasized-title-large-line-height: 28pt;
+    --md-sys-typescale-emphasized-title-large-size: 1.375rem;
+    --md-sys-typescale-emphasized-title-large-tracking: 0rem;
+    --md-sys-typescale-emphasized-title-large-line-height: 1.75rem;
 
     --md-sys-typescale-emphasized-title-medium-font: var(--font-roboto), sans-serif;
     --md-sys-typescale-emphasized-title-medium-weight: 700;
-    --md-sys-typescale-emphasized-title-medium-size: 16pt;
-    --md-sys-typescale-emphasized-title-medium-tracking: 0.15pt;
-    --md-sys-typescale-emphasized-title-medium-line-height: 24pt;
+    --md-sys-typescale-emphasized-title-medium-size: 1rem;
+    --md-sys-typescale-emphasized-title-medium-tracking: 0.009375rem;
+    --md-sys-typescale-emphasized-title-medium-line-height: 1.5rem;
 
     --md-sys-typescale-emphasized-title-small-font: var(--font-roboto), sans-serif;
     --md-sys-typescale-emphasized-title-small-weight: 700;
-    --md-sys-typescale-emphasized-title-small-size: 14pt;
-    --md-sys-typescale-emphasized-title-small-tracking: 0.1pt;
-    --md-sys-typescale-emphasized-title-small-line-height: 20pt;
+    --md-sys-typescale-emphasized-title-small-size: 0.875rem;
+    --md-sys-typescale-emphasized-title-small-tracking: 0.00625rem;
+    --md-sys-typescale-emphasized-title-small-line-height: 1.25rem;
 
     --md-sys-typescale-emphasized-body-large-font: var(--font-roboto), sans-serif;
     --md-sys-typescale-emphasized-body-large-weight: 500;
-    --md-sys-typescale-emphasized-body-large-size: 16pt;
-    --md-sys-typescale-emphasized-body-large-tracking: 0.5pt;
-    --md-sys-typescale-emphasized-body-large-line-height: 24pt;
+    --md-sys-typescale-emphasized-body-large-size: 1rem;
+    --md-sys-typescale-emphasized-body-large-tracking: 0.03125rem;
+    --md-sys-typescale-emphasized-body-large-line-height: 1.5rem;
 
     --md-sys-typescale-emphasized-body-medium-font: var(--font-roboto), sans-serif;
     --md-sys-typescale-emphasized-body-medium-weight: 500;
-    --md-sys-typescale-emphasized-body-medium-size: 14pt;
-    --md-sys-typescale-emphasized-body-medium-tracking: 0.25pt;
-    --md-sys-typescale-emphasized-body-medium-line-height: 20pt;
+    --md-sys-typescale-emphasized-body-medium-size: 0.875rem;
+    --md-sys-typescale-emphasized-body-medium-tracking: 0.015625rem;
+    --md-sys-typescale-emphasized-body-medium-line-height: 1.25rem;
 
     --md-sys-typescale-emphasized-body-small-font: var(--font-roboto), sans-serif;
     --md-sys-typescale-emphasized-body-small-weight: 500;
-    --md-sys-typescale-emphasized-body-small-size: 12pt;
-    --md-sys-typescale-emphasized-body-small-tracking: 0.4pt;
-    --md-sys-typescale-emphasized-body-small-line-height: 16pt;
+    --md-sys-typescale-emphasized-body-small-size: 0.75rem;
+    --md-sys-typescale-emphasized-body-small-tracking: 0.025rem;
+    --md-sys-typescale-emphasized-body-small-line-height: 1rem;
 
     --md-sys-typescale-emphasized-label-large-font: var(--font-roboto), sans-serif;
     --md-sys-typescale-emphasized-label-large-weight: 700;
-    --md-sys-typescale-emphasized-label-large-size: 14pt;
-    --md-sys-typescale-emphasized-label-large-tracking: 0.1pt;
-    --md-sys-typescale-emphasized-label-large-line-height: 20pt;
+    --md-sys-typescale-emphasized-label-large-size: 0.875rem;
+    --md-sys-typescale-emphasized-label-large-tracking: 0.00625rem;
+    --md-sys-typescale-emphasized-label-large-line-height: 1.25rem;
 
     --md-sys-typescale-emphasized-label-medium-font: var(--font-roboto), sans-serif;
     --md-sys-typescale-emphasized-label-medium-weight: 700;
-    --md-sys-typescale-emphasized-label-medium-size: 12pt;
-    --md-sys-typescale-emphasized-label-medium-tracking: 0.5pt;
-    --md-sys-typescale-emphasized-label-medium-line-height: 16pt;
+    --md-sys-typescale-emphasized-label-medium-size: 0.75rem;
+    --md-sys-typescale-emphasized-label-medium-tracking: 0.03125rem;
+    --md-sys-typescale-emphasized-label-medium-line-height: 1rem;
 
     --md-sys-typescale-emphasized-label-small-font: var(--font-roboto), sans-serif;
     --md-sys-typescale-emphasized-label-small-weight: 700;
-    --md-sys-typescale-emphasized-label-small-size: 11pt;
-    --md-sys-typescale-emphasized-label-small-tracking: 0.5pt;
-    --md-sys-typescale-emphasized-label-small-line-height: 16pt;
+    --md-sys-typescale-emphasized-label-small-size: 0.6875rem;
+    --md-sys-typescale-emphasized-label-small-tracking: 0.03125rem;
+    --md-sys-typescale-emphasized-label-small-line-height: 1rem;
 }
 /* #endregion */

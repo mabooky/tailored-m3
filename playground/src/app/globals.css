@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@source "../../../src";
+@source "../../../src/";
 @import "../../../src/tailored-m3.css";
 
 @font-face {
@@ -37,6 +37,5 @@ body {
 }
 
 @theme {
-    --spacing: 1px;
     --font-material-symbols: 'Material Symbols Outlined', sans-serif;
 }

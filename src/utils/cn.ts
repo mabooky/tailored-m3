@@ -4,7 +4,7 @@ const extendedTailwindMerge = extendTailwindMerge<'typescale', never>({
     extend: {
         classGroups: {
             rounded: [
-                'rounded-full-var'
+                'rounded-var-full'
             ],
             shadow: [
                 'shadow-elevation-0',

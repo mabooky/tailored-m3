@@ -2,7 +2,7 @@
 
 import { ThemeProvider } from 'next-themes';
 
-export function MaterialThemeProvider({
+export function M3ThemeProvider({
     children
 }: Readonly<{
     children?: React.ReactNode;

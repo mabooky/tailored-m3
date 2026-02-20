@@ -1,0 +1,4 @@
+@theme inline {
+    --ease-motion-spring-fast-spatial: var(--md-sys-motion-spring-fast-spatial-easing);
+    --duration-motion-spring-fast-spatial: var(--md-sys-motion-spring-fast-spatial-duration);
+}

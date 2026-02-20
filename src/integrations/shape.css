@@ -1,9 +1,9 @@
 @utility h-var-* {
-    --height: --value([length]);
+    --height: calc(var(--spacing) * --value(number));
     height: var(--height);
 }
 
-@utility rounded-full-var {
+@utility rounded-var-full {
     border-radius: calc(var(--height) / 2);
 }
 
