@@ -1,3 +1,7 @@
 packages:
-  - "."
-  - "playground"
+  - .
+  - playground
+
+onlyBuiltDependencies:
+  - core-js
+  - unrs-resolver

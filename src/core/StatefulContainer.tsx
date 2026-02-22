@@ -1,53 +1,25 @@
 import { ComponentProps } from "react";
 import { cn } from "@m3/utils/cn";
-import { BG_SYSTEM_COLOR_MAP, SystemColor } from "@m3/types";
 
-export interface StatefulContainerProps extends ComponentProps<"button"> {
-    stateLayerColor?: SystemColor;
-    minimumTouchTarget?: boolean;
-    selected?: boolean;
-    disabled?: boolean;
-}
+export type StatefulContainerProps = ComponentProps<"div">;
 
 export function StatefulContainer({
     ref,
     className,
-    stateLayerColor,
-    minimumTouchTarget = false,
-    /* 
-        minimumTouchTarget은 접근성 관련 설정이기 때문에 기본값 true가 옳으나,
-        항상 true로 둘 경우 after 의사 요소가 불필요한 곳에도 렌더링된다.
-        따라서, 각 컴포넌트에서는 항상 최소 터치 영역을 확보하되(true와 같은 효과), 컴포넌트의 크기를 고려하여 
-        이 속성을 설정하고, 컴포넌트 사용처에서는 false 값 설정을 통해 opt-out이 가능하도록 할 것!
-    */
-    selected = false,
-    disabled = false,
     children,
     ...props 
 }: StatefulContainerProps) {
     return (
-        <button
+        <div
             ref={ref}
-            className={cn(
-                `relative disabled:opacity-38 group`,
-                minimumTouchTarget && 'm3-minimum-touch-target',
-                className
-            )}
-            data-selected={selected}
-            disabled={disabled}
+            className={cn(`relative`, className)}
             {...props}>
+
             {children}
 
             {/* State Layer */}
-            <div
-                className={cn(
-                    `
-                    absolute inset-0 size-full rounded-[inherit] opacity-0 pointer-events-none
-                    group-hover:opacity-8 group-active:opacity-10
-                    `,
-                    stateLayerColor ? BG_SYSTEM_COLOR_MAP[stateLayerColor] : null
-                )}
-            />
-        </button>
+            <div className="absolute inset-0 size-full rounded-[inherit] opacity-0 pointer-events-none bg-current group-hover:opacity-8 group-focus:opacity-10 group-active:opacity-10" />
+
+        </div>
     )
 }
