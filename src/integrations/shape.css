@@ -3,6 +3,11 @@
     height: var(--height);
 }
 
+/* TODO: rounded-var-* 유틸리티 클래스 작성 */
+@utility rounded-var-1/2 {
+    border-radius: calc(var(--height) / 4);
+}
+
 @utility rounded-var-full {
     border-radius: calc(var(--height) / 2);
 }

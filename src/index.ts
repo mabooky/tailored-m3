@@ -16,5 +16,3 @@ export * from "./core/StatefulContainer"
 export * from "./components/Tooltip"
 
 export { cn as tailoredMerge } from "./utils/cn"
-
-export * from "./types"

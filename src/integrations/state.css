@@ -1,7 +1,9 @@
+@custom-variant disabled (&:disabled, &[aria-disabled="true"]);
+
+@custom-variant unselected (&[data-selected="false"], &[aria-selected="false"]);
+
+@custom-variant selected (&[data-selected="true"], &[aria-selected="true"]);
+
 @theme inline {
     
 }
-
-@custom-variant disabled (&:disabled, &[aria-disabled="true"]);
-
-@custom-variant selected (&[data-selected="true"], &[aria-selected="true"]);

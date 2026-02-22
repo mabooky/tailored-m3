@@ -8,3 +8,5 @@
 @import "./integrations/shape.css";
 @import "./integrations/state.css";
 @import "./integrations/typography.css";
+
+@import "./components/IconButton/styles.css";

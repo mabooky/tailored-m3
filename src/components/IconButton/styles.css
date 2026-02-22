@@ -1,0 +1,199 @@
+@layer components {
+    .m3-icon-button {
+
+    }
+
+    /* 1. 공통 스타일 */
+    .m3-icon-button__container {
+        @apply flex justify-center items-center;
+
+        transition: border-radius, background-color;
+        transition-timing-function: var(--md-sys-motion-spring-fast-spatial-easing);
+        transition-duration: var(--md-sys-motion-spring-fast-spatial-duration);
+    }
+    .m3-icon-button:disabled {
+        @apply pointer-events-none;
+    }
+
+    /* 2. variant에 따른 스타일 */
+    .m3-icon-button__container[data-variant="filled"] {
+        @apply bg-primary text-on-primary;
+    }
+    .m3-icon-button[data-selected="false"] .m3-icon-button__container[data-variant="filled"] {
+        @apply bg-surface-container text-on-surface-variant;
+    }
+    .m3-icon-button:disabled .m3-icon-button__container[data-variant="filled"] {
+        @apply bg-on-surface/10 text-on-surface/38;
+    }
+
+    .m3-icon-button__container[data-variant="tonal"] {
+        @apply bg-secondary-container text-on-secondary-container;
+    }
+    .m3-icon-button[data-selected="true"] .m3-icon-button__container[data-variant="tonal"] {
+        @apply bg-secondary text-on-secondary;
+    }
+    .m3-icon-button:disabled .m3-icon-button__container[data-variant="tonal"] {
+        @apply bg-on-surface/10 text-on-surface/38;
+    }
+
+    .m3-icon-button__container[data-variant="outlined"] {
+        @apply border border-outline-variant text-on-surface-variant;
+    }
+    .m3-icon-button[data-selected="true"] .m3-icon-button__container[data-variant="outlined"] {
+        @apply border-0 bg-inverse-surface text-inverse-on-surface;
+    }
+    .m3-icon-button:disabled .m3-icon-button__container[data-variant="outlined"] {
+        @apply text-on-surface/38;
+    }
+    .m3-icon-button[data-selected="true"]:disabled .m3-icon-button__container[data-variant="outlined"] {
+        @apply border-0 bg-on-surface/10;
+    }
+
+    .m3-icon-button__container[data-variant="standard"] {
+        @apply text-on-surface-variant;
+    }
+    .m3-icon-button[data-selected="true"] .m3-icon-button__container[data-variant="standard"] {
+        @apply text-primary;
+    }
+    .m3-icon-button:disabled .m3-icon-button__container[data-variant="standard"] {
+        @apply text-on-surface/38;
+    }
+
+    /* 3. size에 따른 스타일 */
+    .m3-icon-button__container[data-shape="round"] {
+        @apply rounded-var-full;
+    }
+    .m3-icon-button[data-selected="true"] .m3-icon-button__container[data-shape="square"] {
+        @apply rounded-var-full;
+    }
+
+    .m3-icon-button__container[data-size="xs"] {
+        @apply h-var-8;
+    }
+    .m3-icon-button__container[data-size="xs"] .m3-icon-button__icon {
+        @apply text-xl;
+    }
+    .m3-icon-button__container[data-size="xs"][data-width="narrow"] {
+        @apply w-7;
+    }
+    .m3-icon-button__container[data-size="xs"][data-width="default"] {
+        @apply w-8;
+    }
+    .m3-icon-button__container[data-size="xs"][data-width="wide"] {
+        @apply w-10;
+    }
+    .m3-icon-button__container[data-size="xs"][data-shape="square"] {
+        @apply rounded-md;
+    }
+    /* ⬇️ active 스타일 우선 적용을 위한 명시도 뻥튀기 */
+    .m3-icon-button.m3-icon-button.m3-icon-button:active .m3-icon-button__container[data-size="xs"] {
+        @apply rounded-sm;
+    }
+    .m3-icon-button[data-selected="true"] .m3-icon-button__container[data-size="xs"][data-shape="round"] {
+        @apply rounded-md;
+    }
+
+    .m3-icon-button__container[data-size="sm"] {
+        @apply h-var-10;
+    }
+    .m3-icon-button__container[data-size="sm"] .m3-icon-button__icon {
+        @apply text-2xl;
+    }
+    .m3-icon-button__container[data-size="sm"][data-width="narrow"] {
+        @apply w-8;
+    }
+    .m3-icon-button__container[data-size="sm"][data-width="default"] {
+        @apply w-10;
+    }
+    .m3-icon-button__container[data-size="sm"][data-width="wide"] {
+        @apply w-13;
+    }
+    .m3-icon-button__container[data-size="sm"][data-shape="square"] {
+        @apply rounded-md;
+    }
+    /* ⬇️ active 스타일 우선 적용을 위한 명시도 뻥튀기 */
+    .m3-icon-button.m3-icon-button.m3-icon-button:active .m3-icon-button__container[data-size="sm"] {
+        @apply rounded-sm;
+    }
+    .m3-icon-button[data-selected="true"] .m3-icon-button__container[data-size="sm"][data-shape="round"] {
+        @apply rounded-md;
+    }
+
+    .m3-icon-button__container[data-size="md"] {
+        @apply h-var-14;
+    }
+    .m3-icon-button__container[data-size="md"] .m3-icon-button__icon {
+        @apply text-2xl;
+    }
+    .m3-icon-button__container[data-size="md"][data-width="narrow"] {
+        @apply w-12;
+    }
+    .m3-icon-button__container[data-size="md"][data-width="default"] {
+        @apply w-14;
+    }
+    .m3-icon-button__container[data-size="md"][data-width="wide"] {
+        @apply w-18;
+    }
+    .m3-icon-button__container[data-size="md"][data-shape="square"] {
+        @apply rounded-lg;
+    }
+    /* ⬇️ active 스타일 우선 적용을 위한 명시도 뻥튀기 */
+    .m3-icon-button.m3-icon-button.m3-icon-button:active .m3-icon-button__container[data-size="md"] {
+        @apply rounded-md;
+    }
+    .m3-icon-button[data-selected="true"] .m3-icon-button__container[data-size="md"][data-shape="round"] {
+        @apply rounded-lg;
+    }
+
+    .m3-icon-button__container[data-size="lg"] {
+        @apply h-var-24;
+    }
+    .m3-icon-button__container[data-size="lg"] .m3-icon-button__icon {
+        @apply text-[2rem];
+    }
+    .m3-icon-button__container[data-size="lg"][data-width="narrow"] {
+        @apply w-16;
+    }
+    .m3-icon-button__container[data-size="lg"][data-width="default"] {
+        @apply w-24;
+    }
+    .m3-icon-button__container[data-size="lg"][data-width="wide"] {
+        @apply w-32;
+    }
+    .m3-icon-button__container[data-size="lg"][data-shape="square"] {
+        @apply rounded-xl;
+    }
+    /* ⬇️ active 스타일 우선 적용을 위한 명시도 뻥튀기 */
+    .m3-icon-button.m3-icon-button.m3-icon-button:active .m3-icon-button__container[data-size="lg"] {
+        @apply rounded-lg;
+    }
+    .m3-icon-button[data-selected="true"] .m3-icon-button__container[data-size="lg"][data-shape="round"] {
+        @apply rounded-xl;
+    }
+
+    .m3-icon-button__container[data-size="xl"] {
+        @apply h-var-34;
+    }
+    .m3-icon-button__container[data-size="xl"] .m3-icon-button__icon {
+        @apply text-[2.5rem];
+    }
+    .m3-icon-button__container[data-size="xl"][data-width="narrow"] {
+        @apply w-26;
+    }
+    .m3-icon-button__container[data-size="xl"][data-width="default"] {
+        @apply w-34;
+    }
+    .m3-icon-button__container[data-size="xl"][data-width="wide"] {
+        @apply w-46;
+    }
+    .m3-icon-button__container[data-size="xl"][data-shape="square"] {
+        @apply rounded-xl;
+    }
+    /* ⬇️ active 스타일 우선 적용을 위한 명시도 뻥튀기 */
+    .m3-icon-button.m3-icon-button.m3-icon-button:active .m3-icon-button__container[data-size="xl"] {
+        @apply rounded-lg;
+    }
+    .m3-icon-button[data-selected="true"] .m3-icon-button__container[data-size="xl"][data-shape="round"] {
+        @apply rounded-xl;
+    }
+}

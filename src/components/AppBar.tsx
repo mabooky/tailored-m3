@@ -1,15 +1,15 @@
 'use client';
 
 import { cn } from "@m3/utils/cn";
-import { Container, ContainerProps } from "../core/Container";
+import { Container, ContainerProps } from "@m3/core/Container";
 import { IconButton, IconButtonProps } from "./IconButton";
 import { ComponentProps, createContext, useContext } from "react";
 
-export interface AppBarProps extends ContainerProps {
+export type AppBarProps = ContainerProps & {
     variant?: 'search' | 'small' | 'medium-flexible' | 'large-flexible'
 }
 
-interface AppBarContextValue {
+type AppBarContextValue = {
     variant: NonNullable<AppBarProps['variant']>;
 }
 
@@ -49,9 +49,7 @@ export function AppBarRoot({
     )
 }
 
-export interface AppBarLeadingButtonProps extends IconButtonProps {
-
-}
+export type AppBarLeadingButtonProps = IconButtonProps;
 
 export function AppBarLeadingButton({
     ref,
@@ -76,9 +74,7 @@ export function AppBarLeadingButton({
     )
 }
 
-export interface AppBarTrailingButtonProps extends IconButtonProps {
-
-}
+export type AppBarTrailingButtonProps = IconButtonProps;
 
 export function AppBarTrailingButton({
     ref,
@@ -101,9 +97,7 @@ export function AppBarTrailingButton({
     )
 }
 
-export interface AppBarHeadlineProps extends ComponentProps<"p"> {
-    
-}
+export type AppBarHeadlineProps = ComponentProps<"p">;
 
 export function AppBarHeadline({
     ref,
