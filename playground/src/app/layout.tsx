@@ -19,6 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={roboto.variable} suppressHydrationWarning>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <body>
             <M3ThemeProvider>
                 {children}
