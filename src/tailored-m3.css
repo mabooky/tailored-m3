@@ -12,7 +12,8 @@
 @import "./integrations/typography.css";
 
 /* Layer 3: 코어 컴포넌트 스타일 정의 */
-@import "./core/TouchTarget/styles.css";
+@import "./core/touch-target.css";
 
 /* Layer 4: 컴포넌트 스타일 정의 */
-@import "./components/IconButton/styles.css";
+@import "./components/icon-button.css";
+@import "./components/navigation-bar.css";

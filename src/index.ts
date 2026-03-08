@@ -1,4 +1,5 @@
 import { AppBarHeadline, AppBarLeadingButton, AppBarRoot, AppBarTrailingButton } from "./components/AppBar"
+import { NavigationBarRoot, NavigationBarItem } from "./components/NavigationBar"
 
 export * from "./components/IconButton"
 export const AppBar = Object.assign(AppBarRoot, {
@@ -10,6 +11,9 @@ export * from "./components/Button"
 export * from "./components/ButtonGroup"
 export * from "./components/Card"
 export * from "./components/FAB"
+export const NavigationBar = Object.assign(NavigationBarRoot, {
+    Item: NavigationBarItem,
+})
 export * from "./components/Pane"
 export * from "./components/Tooltip"
 

@@ -1,0 +1,65 @@
+@layer components {
+    .m3-navigation-bar {
+        @apply w-full h-16 z-20 bg-surface-container flex items-stretch;
+    }
+
+    .m3-navigation-bar[data-item-layout="vertical"] {
+        @apply justify-around;
+    }
+
+    .m3-navigation-bar[data-item-layout="horizontal"] {
+        @apply justify-center;
+    }
+    
+    /* 아이템 전체 스타일 */
+    .m3-navigation-bar__item {
+        @apply h-full flex justify-center items-center;
+    }
+
+    .m3-navigation-bar[data-item-layout="vertical"] .m3-navigation-bar__item {
+        @apply flex-1 py-1.5 flex-col;
+    }
+
+    .m3-navigation-bar[data-item-layout="horizontal"] .m3-navigation-bar__item {
+        @apply w-50 py-3;
+    }
+
+    /* Active indicator 스타일 */
+    .m3-navigation-bar__active-indicator {
+        @apply text-on-secondary-container flex justify-center items-center;
+    }
+
+    .m3-navigation-bar[data-item-layout="vertical"] .m3-navigation-bar__active-indicator {
+        @apply w-14 h-8 rounded-full;
+    }
+
+    .m3-navigation-bar[data-item-layout="horizontal"] .m3-navigation-bar__active-indicator {
+        @apply h-10 px-4 rounded-full gap-1;
+    }
+
+    .m3-navigation-bar__item[data-active="true"] .m3-navigation-bar__active-indicator {
+        @apply bg-secondary-container;
+    }
+
+    /* Icon 스타일 */
+    .m3-navigation-bar__icon {
+        @apply text-on-surface-variant text-[1.5rem] select-none;
+    }
+
+    .m3-navigation-bar__item[data-active="true"] .m3-navigation-bar__icon {
+        @apply text-on-secondary-container;
+    }
+
+    /* Label 스타일 */
+    .m3-navigation-bar__label {
+        @apply typescale-label-medium text-on-surface-variant select-none;
+    }
+
+    .m3-navigation-bar[data-item-layout="vertical"] .m3-navigation-bar__label {
+        @apply mt-1;
+    }
+
+    .m3-navigation-bar__item[data-active="true"] .m3-navigation-bar__label {
+        @apply text-secondary;
+    }
+}
