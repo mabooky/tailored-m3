@@ -1,0 +1,10 @@
+@layer components {
+    .m3-touch-target {
+        @apply relative w-fit h-fit focus-visible:outline-none cursor-pointer;
+        @apply inline-flex justify-center items-center;
+    }
+
+    .m3-touch-target[data-minimum-touch-target="box"] {
+        @apply min-w-12 min-h-12;
+    }
+}
