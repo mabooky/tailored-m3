@@ -7,4 +7,8 @@
     .m3-touch-target[data-minimum-touch-target="box"] {
         @apply min-w-12 min-h-12;
     }
+
+    .m3-touch-target[data-minimum-touch-target="hitbox"]::after {
+        @apply content-[''] absolute inset-1/2 size-12 -translate-1/2;
+    }
 }

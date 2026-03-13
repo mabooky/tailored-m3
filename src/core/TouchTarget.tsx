@@ -16,11 +16,7 @@ export function TouchTarget({
     return (
         <button
             ref={ref}
-            className={cn(
-                'm3-touch-target group', // group은 클래스 이름이라고 한다...
-                minimumTouchTarget === 'hitbox' && `m3-after-minimum-touch-target`,
-                className
-            )}
+            className={cn('m3-touch-target', className)}
             data-minimum-touch-target={minimumTouchTarget}
             disabled={disabled}
             {...props}>

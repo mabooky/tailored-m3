@@ -2,7 +2,6 @@
 @import "./design-tokens-default.css";
 
 /* Layer 2: tailwind 유틸리티 정의 */
-@import "./integrations/accessibility.css";
 @import "./integrations/interaction.css";
 @import "./integrations/color.css";
 @import "./integrations/elevation.css";
