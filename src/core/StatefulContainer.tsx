@@ -8,18 +8,14 @@ export type StatefulContainerProps = ComponentProps<"div"> & {
 export function StatefulContainer({
     ref,
     className,
-    usesRipple = false,
+    usesRipple = true, // TODO: Ripple 효과 구현
     children,
     ...props 
 }: StatefulContainerProps) {
     return (
         <div
             ref={ref}
-            className={cn(
-                `m3-stateful-container`,
-                !usesRipple && 'm3-after-state-layer',
-                className
-            )}
+            className={cn(`m3-stateful-container`, className)}
             {...props}>
 
             {children}

@@ -3,12 +3,13 @@
         position: relative;
     }
 
-    /* TouchTarget 내에서 사용되는 경우 부모의 상호작용 이벤트에 반응 */
-    .m3-touch-target .m3-stateful-container::after {
+    /* 상태 레이어를 after 요소로 정의 ----------------------------------------------------- */
+    .m3-stateful-container::after {
         @apply content-[''] absolute inset-0 size-full rounded-[inherit];
         @apply opacity-0 pointer-events-none bg-current;
     }
-
+    
+    /* 컴포넌트 최상위 요소인 TouchTarget의 상호작용 이벤트에 반응 */
     .m3-touch-target:hover .m3-stateful-container::after {
         @apply opacity-8;
     }
@@ -20,7 +21,7 @@
     .m3-touch-target:active .m3-stateful-container::after {
         @apply opacity-10;
     }
-
+    
     .m3-touch-target:focus-visible .m3-stateful-container {
         @apply outline-3 outline-offset-2 outline-secondary;
     }
