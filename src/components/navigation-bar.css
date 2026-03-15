@@ -1,65 +1,124 @@
 @layer components {
+    /* Navigation bar 스타일 ------------------------------------------------------- */
+
     .m3-navigation-bar {
-        @apply w-full h-16 z-20 bg-surface-container flex items-stretch;
+        width: 100%;
+        height: calc(64 / 16 * 1rem);
+        z-index: 20;
+        background-color: var(--md-sys-color-surface-container);
+        display: flex;
+        align-items: stretch;
     }
 
     .m3-navigation-bar[data-item-layout="vertical"] {
-        @apply justify-around;
+        justify-content: space-around;
     }
 
     .m3-navigation-bar[data-item-layout="horizontal"] {
-        @apply justify-center;
+        justify-content: center;
     }
+
+
+
+    /* Navigation bar 아이템 스타일 --------------------------------------------------- */
+
+    .m3-navigation-bar-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .m3-navigation-bar[data-item-layout="vertical"] .m3-navigation-bar-item {
+        flex: 1;
+        flex-direction: column;
+        padding-block: calc(6 / 16 * 1rem);
+    }
+
+    .m3-navigation-bar[data-item-layout="horizontal"] .m3-navigation-bar-item {
+        width: calc(200 / 16 * 1rem);
+        padding-block: calc(12 / 16 * 1rem);
+    }
+
+
     
-    /* 아이템 전체 스타일 */
-    .m3-navigation-bar__item {
-        @apply h-full flex justify-center items-center;
+    /* Active indicator 스타일 ----------------------------------------------------- */
+
+    .m3-navigation-bar-item__active-indicator {
+        color: var(--md-sys-color-on-secondary-container);
+        border-radius: calc(infinity * 1px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
-    .m3-navigation-bar[data-item-layout="vertical"] .m3-navigation-bar__item {
-        @apply flex-1 py-1.5 flex-col;
+    .m3-navigation-bar[data-item-layout="vertical"] .m3-navigation-bar-item__active-indicator {
+        width: calc(56 / 16 * 1rem);
+        height: calc(32 / 16 * 1rem);
     }
 
-    .m3-navigation-bar[data-item-layout="horizontal"] .m3-navigation-bar__item {
-        @apply w-50 py-3;
+    .m3-navigation-bar[data-item-layout="horizontal"] .m3-navigation-bar-item__active-indicator {
+        height: calc(40 / 16 * 1rem);
+        padding-inline: calc(16 / 16 * 1rem);
+        gap: calc(4 / 16 * 1rem);
     }
 
-    /* Active indicator 스타일 */
-    .m3-navigation-bar__active-indicator {
-        @apply text-on-secondary-container flex justify-center items-center;
+    /* Active indicator 애니메이션을 위해 배경의 크기를 변경해야하므로 배경을 before로써 구현 */
+    .m3-navigation-bar-item__active-indicator::before {
+        position: absolute;
+        content: '';
+        height: 100%;
+        background-color: var(--md-sys-color-secondary-container);
+        border-radius: inherit;
+        /* TODO: 추후 tailored-m3 motion 구현 적용 */
+        transition: width var(--md-sys-motion-spring-fast-spatial),
+            opacity var(--md-sys-motion-spring-fast-effects);
     }
 
-    .m3-navigation-bar[data-item-layout="vertical"] .m3-navigation-bar__active-indicator {
-        @apply w-14 h-8 rounded-full;
+    .m3-navigation-bar-item[data-active="false"] .m3-navigation-bar-item__active-indicator::before {
+        width: 0;
+        opacity: 0;
     }
 
-    .m3-navigation-bar[data-item-layout="horizontal"] .m3-navigation-bar__active-indicator {
-        @apply h-10 px-4 rounded-full gap-1;
+    .m3-navigation-bar-item[data-active="true"] .m3-navigation-bar-item__active-indicator::before {
+        width: 100%;
+        opacity: 1;
     }
 
-    .m3-navigation-bar__item[data-active="true"] .m3-navigation-bar__active-indicator {
-        @apply bg-secondary-container;
+
+    /* Icon 스타일 ----------------------------------------------------------------- */
+
+    .m3-navigation-bar-item__icon {
+        z-index: 1;
+        color: var(--md-sys-color-on-surface-variant);
+        font-size: calc(24 / 16 * 1rem);
+        user-select: none;
     }
 
-    /* Icon 스타일 */
-    .m3-navigation-bar__icon {
-        @apply text-on-surface-variant text-[1.5rem] select-none;
+    .m3-navigation-bar-item[data-active="true"] .m3-navigation-bar-item__icon {
+        color: var(--md-sys-color-on-secondary-container);
+        font-variation-settings: "FILL" 1;
     }
 
-    .m3-navigation-bar__item[data-active="true"] .m3-navigation-bar__icon {
-        @apply text-on-secondary-container;
+
+
+    /* Label 스타일 ---------------------------------------------------------------- */
+
+    .m3-navigation-bar-item__label {
+        z-index: 1;
+        font-family: var(--md-sys-typescale-label-medium-font);
+        font-weight: var(--md-sys-typescale-label-medium-weight);
+        font-size: var(--md-sys-typescale-label-medium-size);
+        letter-spacing: var(--md-sys-typescale-label-medium-tracking);
+        line-height: var(--md-sys-typescale-label-medium-line-height);
+        color: var(--md-sys-color-on-surface-variant);
+        user-select: none;
     }
 
-    /* Label 스타일 */
-    .m3-navigation-bar__label {
-        @apply typescale-label-medium text-on-surface-variant select-none;
+    .m3-navigation-bar[data-item-layout="vertical"] .m3-navigation-bar-item__label {
+        margin-top: calc(4 / 16 * 1rem);
     }
 
-    .m3-navigation-bar[data-item-layout="vertical"] .m3-navigation-bar__label {
-        @apply mt-1;
-    }
-
-    .m3-navigation-bar__item[data-active="true"] .m3-navigation-bar__label {
-        @apply text-secondary;
+    .m3-navigation-bar-item[data-active="true"] .m3-navigation-bar-item__label {
+        color: var(--md-sys-color-secondary);
     }
 }
