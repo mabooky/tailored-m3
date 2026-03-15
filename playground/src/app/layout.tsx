@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
-import { M3ThemeProvider } from '@mabooky/tailored-m3'
+import { M3Provider } from "@m3/providers/M3Provider";
 
 const roboto = Roboto({
     subsets: ["latin"],
@@ -19,11 +19,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={roboto.variable} suppressHydrationWarning>
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1"/>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        </head>        
         <body>
-            <M3ThemeProvider>
+            <M3Provider>
                 {children}
-            </M3ThemeProvider>
+            </M3Provider>
         </body>
     </html>
   );
