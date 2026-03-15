@@ -17,10 +17,11 @@ export const NavigationBar = Object.assign(NavigationBarRoot, {
 export * from "./components/Pane"
 export * from "./components/Tooltip"
 
-export * from "./core/StatefulContainer"
 export * from "./core/Container"
+export * from "./core/Icon"
+export * from "./core/StatefulContainer"
 export * from "./core/TouchTarget"
 
-export * from "./providers/M3ThemeProvider"
+export * from "./providers/M3Provider"
 
 export { cn as tailoredMerge } from "./utils/cn"
